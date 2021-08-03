@@ -42,7 +42,7 @@ function render(data) {
         <div class="qty">
         <input class="qty__item" type="number" value="0"> Кол
         </div>
-        <button class="product-box__btn" >Добавить</button>
+        <button class="product-box__btn">Добавить</button>
 
     </div>
 </div>`
@@ -60,14 +60,9 @@ for (let i = 0; i < button.length; i++) {
     });
 }
 let cost = document.getElementById('total__price');
-for (let i = 0; i < cost.innerText; i++) {
-    button[i].addEventListener('click', function(e) {
-      cost.innerHTML = e.target.closest('.product-box__meta').querySelectorAll('.qty__item')[i].value;
-    });
-}
+
 let initItem = input.innerHTML;
-let w = document.getElementById('total__prods');
-let initPrice = w.innerHTML;
+let initPrice = cost.innerHTML;
 
 ///////////// form
 const form = document.getElementById('form');
@@ -86,7 +81,8 @@ form.addEventListener('submit', function(evt) {
     return;
   } else {
     alert ('Спасибо за покупки')
-     return w.innerHTML = initItem; 
+     return input.innerHTML = initItem,
+            cost.innerHTML = initPrice;
      
   }
   
