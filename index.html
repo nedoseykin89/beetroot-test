@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test task JavaScript advanced</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div style="text-align: center;">
+            <a href="#openModal">Открыть модальное окно</a>
+        </div>
+        <div id="openModal" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">ОФОРМИТЬ ЗАКАЗ</h3>
+                        <a href="#close" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" class="form">
+                            <label for="form-name" class="label">
+                                <span>Введите имя: </span>
+                                <input type="text" class="input-form" id="form-name" name="name"
+                                    placeholder="Введите имя" minlength="2">
+
+                            </label>
+
+                            <label for="email" class="label">
+                                <span>Введите email: </span>
+                                <input type="email" class="input-form" id="email" name="email"
+                                    placeholder="Введите email" minlength="8">
+
+                            </label>
+                            <button class="button">Отправить</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-container pt-40">
+        <div class="top-cart">
+            <div class="top-cart-info">
+                <div class="container top-cart-info-container">
+                    <span class="top-cart-info__item">
+                        Товаров в корзине - <span class="red-info" id="total__prods">XXX</span>,
+                        на сумму <span class="red-info" id="total__price">XXX</span></span>
+                    <a class="btn-check" href="#openModal">Оформить заказ</a>
+                </div>
+            </div><!-- /.top-cart-info -->
+
+        </div><!-- /.top-cart -->
+
+
+
+        <header class="top-header">
+            <div class="container-t">
+                <h1>Welcome to our site</h1>
+            </div>
+        </header>
+
+        <div class="wrap">
+            <section class="container">
+                <div class="filter-box">
+                    <div class="select-box">
+                        <label class="filter-label">Категория</label>
+                        <select id="cats" class="select-control">
+                            <option value="0">Все</option>
+                            <option value="1">Завтраки</option>
+                            <option value="2">Первые блюда</option>
+                            <option value="3">Гарниры</option>
+                        </select>
+                    </div><!-- /.select-box -->
+                    <div class="price-select-box">
+                        <label class="filter-label">Цена</label>
+                        <select id="price" class="select-control">
+                            <option value="0">Все</option>
+                            <option value="30">До 30 грн</option>
+                            <option value="50">До 50 грн</option>
+                            <option value="100">До 100 грн</option>
+                            <option value="150">До 150 грн</option>
+                        </select>
+                    </div><!-- /.price-select-box -->
+                </div><!-- /filter-box-->
+
+
+                <div id="products" class="products-box grid-box "> </div>
+
+            </section>
+
+        </div>
+
+        <footer class="bottom-footer bg-beetroot py-1">
+            <div class="container">
+                <div class="footer-row">
+                    <div class="col-md-9 text-center">
+                        <a target="_blank" href="https://academy.beetroot.se/?">Bettroot academy &copy; <span
+                                id="bty"></span></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div><!-- /.app-container -->
+
+    <script>
+        document.getElementById('bty').textContent = (new Date()).getFullYear();
+    </script>
+    <script src="js/products-data.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
